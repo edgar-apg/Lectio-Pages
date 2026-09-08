@@ -1,0 +1,243 @@
+/* ========================================
+   LECTIO — Estilos principales
+   ======================================== */
+
+:root {
+    --color-fondo: #f7f5f0;
+    --color-texto: #252525;
+    --color-secundario: #66615a;
+    --color-acento: #4f5d4a;
+    --color-borde: #d8d3ca;
+    --color-blanco: #ffffff;
+    --ancho-contenido: 900px;
+}
+
+/* ---------- Base ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+}
+
+/* ---------- Encabezado ---------- */
+
+header {
+    max-width: var(--ancho-contenido);
+    margin: 0 auto;
+    padding: 90px 24px 70px;
+    text-align: center;
+
+    .lectio-symbol {
+    display: block;
+    width: 130px;
+    height: auto;
+    margin: 0 auto 24px;
+}
+
+}
+
+header h1 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+}
+
+header p {
+    margin: 12px 0 0;
+    color: var(--color-secundario);
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+}
+
+/* ---------- Contenido ---------- */
+
+main {
+    max-width: var(--ancho-contenido);
+    margin: 0 auto;
+    padding: 0 24px 80px;
+}
+
+section h2 {
+    margin: 0 0 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.08em;
+}
+
+/* ---------- Proyectos ---------- */
+
+.projects {
+    display: grid;
+    gap: 18px;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding: 28px 30px;
+
+    background: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.project:hover {
+    transform: translateY(-2px);
+    border-color: #c6c0b6;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.project-content {
+    min-width: 0;
+}
+
+.project h3 {
+    margin: 0 0 6px;
+
+    color: var(--color-acento);
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.project p {
+    margin: 0;
+    color: var(--color-secundario);
+}
+
+.project-link {
+    flex-shrink: 0;
+
+    color: var(--color-acento);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+.project-coming-soon {
+    opacity: 0.78;
+}
+
+.project-status {
+    flex-shrink: 0;
+
+    padding: 5px 11px;
+
+    border: 1px solid var(--color-borde);
+    border-radius: 20px;
+
+    color: var(--color-secundario);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+}
+
+/* ---------- Sobre Lectio ---------- */
+
+.about {
+    margin-top: 90px;
+    padding: 60px 20px;
+
+    border-top: 1px solid var(--color-borde);
+    text-align: center;
+}
+
+.about h2 {
+    margin: 0 0 28px;
+
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+}
+
+.about-content {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    margin: 0 0 18px;
+
+    color: var(--color-secundario);
+}
+
+.about-motto {
+    margin-top: 32px !important;
+
+    color: var(--color-acento) !important;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* ---------- Pie de página ---------- */
+
+footer {
+    padding: 30px 24px;
+    border-top: 1px solid var(--color-borde);
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    color: var(--color-secundario);
+    font-size: 0.85rem;
+}
+
+/* ---------- Móviles ---------- */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 60px 20px 50px;
+    }
+
+    header h1 {
+        font-size: 2.8rem;
+    }
+
+    main {
+        padding: 0 20px 60px;
+    }
+
+    article {
+        padding: 24px;
+    }
+
+        .project {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .project-link,
+    .project-status {
+        align-self: flex-start;
+    }
+}
